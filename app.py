@@ -64,6 +64,14 @@ llm = GradientBaseModelLLM(
     is_chat_model=True,
 )
 
+folder_name = "data"
+
+# Get the current directory
+current_directory = os.getcwd()
+
+# Create a path for the new folder
+ wikipedia_data_dir= os.path.join(current_directory, folder_name)
+
 from llama_index import set_global_service_context
 
 from llama_index.embeddings import GradientEmbedding
@@ -98,7 +106,7 @@ wms_vector_store = PineconeVectorStore(
 
 # allow the PineconeVectorStore to be used as storage
 storage_context = StorageContext.from_defaults(vector_store=wms_vector_store)
-wikipedia_data_dir = '/content/drive/MyDrive/Colab Notebooks/Flask-model/data/wiki'
+
 
 documents = SimpleDirectoryReader(wikipedia_data_dir).load_data()
 # allow the creation of an Index
