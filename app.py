@@ -63,14 +63,13 @@ llm = GradientBaseModelLLM(
     callback_manager=gradient_callback,
     is_chat_model=True,
 )
-
 folder_name = "data"
 
 # Get the current directory
 current_directory = os.getcwd()
 
 # Create a path for the new folder
- wikipedia_data_dir= os.path.join(current_directory, folder_name)
+wikipedia_data_dir= os.path.join(current_directory, folder_name)
 
 from llama_index import set_global_service_context
 
