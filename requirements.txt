@@ -9,3 +9,4 @@ pyngrok
 flask
 flask_cors
 gunicorn
+pinecone-client
