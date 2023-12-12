@@ -89,6 +89,8 @@ from llama_index.vector_stores import PineconeVectorStore
 from llama_index.storage import StorageContext
 from llama_index import VectorStoreIndex
 
+
+
 # connect and name the PineconeVectorStore
 wms_vector_store = PineconeVectorStore(
     pinecone_index=pinecone_index, namespace="wikipedia_info"
@@ -96,8 +98,9 @@ wms_vector_store = PineconeVectorStore(
 
 # allow the PineconeVectorStore to be used as storage
 storage_context = StorageContext.from_defaults(vector_store=wms_vector_store)
+wikipedia_data_dir = '/content/drive/MyDrive/Colab Notebooks/Flask-model/data/wiki'
 
-
+documents = SimpleDirectoryReader(wikipedia_data_dir).load_data()
 # allow the creation of an Index
 wms_vector_index = VectorStoreIndex.from_documents(documents,
                                        storage_context=storage_context)
@@ -126,7 +129,6 @@ storage_context = StorageContext.from_defaults(vector_store=wms_vector_store)
 
 # Allow the creation of an Index
 
-wikipedia_data_dir = '/content/drive/MyDrive/Colab Notebooks/Flask-model/data/wiki'
 def download_wikipedia_content(url):
     response = requests.get(url)
     if response.status_code == 200:
