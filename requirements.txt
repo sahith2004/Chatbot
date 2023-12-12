@@ -8,3 +8,4 @@ bitsandbytes
 pyngrok
 flask
 flask_cors
+gunicorn
