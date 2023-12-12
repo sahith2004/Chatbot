@@ -116,8 +116,8 @@ portno = 8000
 app = Flask(__name__)
 CORS(app)
 
-ngrok.set_auth_token('2ZGr4Gf5m7wNAUvDwHdgdSSZJPX_4mGbGzSCpfAFuc7fPpGGi')
-public_url = ngrok.connect(portno).public_url
+#ngrok.set_auth_token('2ZGr4Gf5m7wNAUvDwHdgdSSZJPX_4mGbGzSCpfAFuc7fPpGGi')
+#public_url = ngrok.connect(portno).public_url
 
 wms_vector_store = PineconeVectorStore(pinecone_index=pinecone_index, namespace="wikipedia_info")
 
