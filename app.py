@@ -1,6 +1,6 @@
 from llama_index import SimpleDirectoryReader, VectorStoreIndex
 
-from IPython.display import Markdown, display
+
 from llama_index import ServiceContext
 from llama_index import StorageContext, load_index_from_storage
 from llama_index import (
@@ -185,4 +185,3 @@ def train_query_engine():
 
 
 print(f"to access go to {public_url}")
-app.run(port=portno)
